@@ -67,7 +67,9 @@ node seed.js
 node server.js
 ```
 
-The API runs locally on the port configured in the project.
+The API runs locally at:
+
+http://localhost:3000
 
 ## API Endpoints
 
