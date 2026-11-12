@@ -16,40 +16,40 @@
 |---|---|---|---|
 | Load internship data | Data retrieved from API | Five internships displayed | PASS |
 | Search internships | Matching results displayed | Search working | PASS |
-| Filter by domain | Matching internships displayed | Working | PASS |
-| Filter by work mode | Matching internships displayed | Working | PASS |
+| Filter by domain | Matching results displayed | Working | PASS |
+| Filter by work mode | Matching results displayed | Working | PASS |
 | Loading state | Loading message displayed | Working | PASS |
 | Application submission | Application saved successfully | Successful submission | PASS |
 | Database persistence | Application stored in SQLite | Record verified | PASS |
 
 ### 3. Form Validation Testing
 
-| Test Case | Expected Result | Status |
-|---|---|---|
-| Empty required fields | Browser validation message | PASS |
-| Invalid email | Email validation warning | PASS |
-| Invalid phone number | Phone format warning | PASS |
-| Invalid resume selection | PDF file restriction | PASS |
-| Valid application | Application accepted | PASS |
+| Test Case | Expected Result | Actual Result | Status |
+|---|---|---|---|
+| Empty required fields | Validation message | Browser validation displayed | PASS |
+| Invalid email | Email validation warning | Warning displayed | PASS |
+| Invalid phone number | Phone format warning | Warning displayed | PASS |
+| Invalid resume selection | PDF file restriction | Non-PDF selection prevented | PASS |
+| Valid application | Application accepted | Successful submission | PASS |
 
 ### 4. Security Testing
 
 | Security Feature | Test Result | Status |
 |---|---|---|
 | Helmet security headers | Security headers verified | PASS |
-| API rate limiting | HTTP 429 received after request limit | PASS |
+| General API rate limiting | HTTP 429 received after request limit | PASS |
+| Application rate limiting | First five requests returned HTTP 400; next two returned HTTP 429 | PASS |
 | Parameterized SQL queries | Used in database operations | IMPLEMENTED |
 | Server-side application validation | Validation implemented | IMPLEMENTED |
-| PDF upload validation | File type, size and PDF signature checks implemented | IMPLEMENTED |
+| PDF upload validation | File type, size and PDF signature checks implemented | PASS |
 | Private resume storage | Uploads stored outside public folder | IMPLEMENTED |
-
-Note: The application-specific rate-limit test is pending final verification after the previous rate-limit window resets.
 
 ### 5. Database Verification
 
 The application was successfully stored in the SQLite database.
 
 Verified information:
+
 - Application ID: 1
 - Internship ID: INT-101
 - Applicant Name: Test Applicant
